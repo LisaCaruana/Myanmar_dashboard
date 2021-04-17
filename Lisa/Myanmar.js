@@ -15,10 +15,13 @@ var Myanmar_map = L.map("map", {
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/streets-v11",
+    //find mapbox tile layer that includes outlines
     // paddingTopLeft: "15px"
     accessToken: API_KEY
   }).addTo(Myanmar_map);
 
+  //Submit and choose file will first be in javascript, use D3 to select info to put into a dictionary or list in javescript
+  //then send info to database. Python flask app will call it back and send it back to JS
   //Need to: Put map in box, put outline around country and states 
   // Dropdown of States and Regions
   // Cities to include: Yangon, Mandalay, Bago, Mogok, Myitkyina, Bagan, Naypytaw, Mawlamyine, Taunggyi, Shwebo, Monywa, Dawei, Mawlamyine, Bhamo   
