@@ -27,9 +27,9 @@ var Myanmar_map = L.map("map", {
   //Need to: Put map in box, put outline around country and states 
   // Dropdown of States and Regions
   //States: Chin* (Hakha), Kachin* (Myitkyina, Bhamo), *Kayah (Loikaw), 
-  //*Kayin (Myawaddy), *Mon (Mawlamyine), *Rakhine (Sittwe), Shan (Taunggyi)
+  //*Kayin (Myawaddy), *Mon (Mawlamyine), *Rakhine (Sittwe), *Shan (Taunggyi)
   //Regions: *Ayeyarwady (Pathein), *Bago (Bago), *Magway, 
-  //*Mandalay (Mandalay, Mogok), Sagaing (Monywa, Shwebo), 
-  //Tanintharyi (Dawei) Yangon (Yangon)
+  //*Mandalay (Mandalay, Mogok), *Sagaing (Monywa, Shwebo), 
+  //*Tanintharyi (Dawei) *Yangon (Yangon)
   //Other: Naypytaw, Wa Territory
  
