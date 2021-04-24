@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Myanmar</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+
+  <ul class="formlist" id="input-form-list">
+    <h2 class="wsite-content-title" style="text-align:left;"><font size="6" color="#00000">Human Rights Abuses Report Form</font></h2>
+    <h3 class="wsite-content-title" style="text-align:left;"><font size="5" color="#00000">လူ့အခွင့်အရေးချိုးဖောက်မှုအစီရင်ခံစာပုံစံ</font></h3>
+
+<label class="wsite-form-label wsite-form-fields-required-label"><span class="form-required">*</span> Indicates required field</label><div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
+<label class="wsite-form-label wsite-form-fields-required-label"><span class="form-required">*</span> လိုအပ်တဲ့လယ်ကွင်းဖော်ပြသည်</label><div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;"></div>
+<hr>
+    <div id="instructions" class="wsite-form-instructions" style="display:none;"></div>
+  </div></div> 
+ 
+<div><div class="wsite-form-field wsite-name-field" style="margin:5px 0px 5px 0px;"> 
+ </div>
+  <form>
+    
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">State/Region (ပြည်နယ် / တိုင်းဒေသကြီး)</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Ayeyarwady (ဧရာဝတီတိုင်းဒေသကြီ)</option>
+        <option>Bago (ပဲခူးမြို့)</option>
+        <option>Chin (ချင်းပြည်နယ်)</option>
+        <option>Kachin (ကချင်ပြည်နယ်)</option>
+        <option>Kayah (ကယားပြည်နယ်)</option>
+        <option>Kayin (ကရင်ပြည်နယ်)</option>
+        <option>Magway (မကွေးတိုင်းဒေသကြီ)</option>
+        <option>Mandalay (မန္တလေ)</option>
+        <option>Mon (မွန် ပြည်နယ်)</option>
+        <option>Nay Pyi Taw (နေပြည်တေ)</option>
+        <option>Rakhine (ရခိုင်ပြည်နယ်)</option>
+        <option>Sagaing (စစ်ကိုင်းမြို့)</option>
+        <option>Shan (မိူင်းတႆ)</option>
+        <option>Tanintharyi (တနင်္သာရီတိုင်းဒေသကြီ)</option>
+        <option>Wa (ဝပြည်နယ်)</option>
+        <option>Yangon (ရန်ကုန်)</option>
+      </select>
+    </div>
+    <hb>
+    <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
+    <label class="wsite-form-label" for="input">Description/ဖော်ပြချက် <span class="form-required">*</span></label>
+    <div class="wsite-form-input-container">
+      <textarea aria-required="true" id="input" class="wsite-form-input wsite-input wsite-input-width-370px" style="height: 200px"></textarea>
+      </div>
+      <div id="instructions" class="wsite-form-instructions" style="display:none;"></div>
+    </div></div>
+
+<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
+<label class="wsite-form-label" for="input_photo">Photo/ဓာတ်ပုံ<span class="form-not-required">*</span></label>
+<br>
+<label class="wsite-form-label" for="input_photo">(Please remove any identifying information/
+  ဖော်ပြပါအချက်အလက်များကိုဖယ်ရှားပါ) <span class="form-not-required">*</span></label>
+<div class="wsite-form-input-container">
+  <input type="hidden" name="MAX_FILE_SIZE" value="20971520">
+  <input id="input_photo" class="wsite-form-input" type="file" name="_photo">
+  <div style="font-size:10px;">Max file size: 20MB</div> 
+</div>
+<div id="instructions" class="wsite-form-instructions" style="display:none;"></div>
+</div></div>
+<div class="col-auto my-1">
+  <button type="submit" class = "btn btn-primary">Submit (တင်သွင်းပါ)</button>
+</div>
+</ul>
+  </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<hr>
+<a class="twitter-timeline" href="https://twitter.com/joaquinDS5/lists/what-happening-in-myanmar-79920?ref_src=twsrc%5Etfw">A Twitter bot by Group 6</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- <div> -->
+<div id="map"></div>
+<!-- </div> -->
+<!-- <div id="mapid"></div>
+<div id="mapheat"></div> -->
+<!-- Leaflet heatmap plugin-->
+<!-- <script type="text/javascript" src="js/leaflet-heat.js"></script>
+<script src='js/config.js'></script>
+<script src='js/map.js'></script>
+<script src='js/marker.js'></script>
+</body>
+</html> -->
+<!-- 
+<div class="container">
+  <h3>Tooltip Example</h3>
+  <p>Tooltips are not CSS-only plugins, and must therefore be initialized with jQuery: select the specified element and call the tooltip() method.</p>
+  <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+</div> -->
+
+
+  <!-- The div where we will inject our map
+  <div>
+    <div class = "map"></div>  --> 
+    <!-- <div id="map"></div>
+  </div>  --> 
+ 
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <!-- API key -->
+  <script type="text/javascript" src="../static/js/config.js"></script>
+  <!-- JS -->
+  <script type="text/javascript" src="../static/js/Myanmar.js"></script>
+  <script type="text/javascript" src="../static/leaflet-heat.js"></script>
+  <script type="text/javascript" src="../static/map.js"></script>
+  <script type="text/javascript" src="../static/marker.js"></script>
+</body>
+
+</html>
+
+

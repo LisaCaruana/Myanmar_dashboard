@@ -45,7 +45,7 @@ def myanmar():
         myanmar_dict['latitude']=item['latitude']
         myanmar_dict['longitude']=item['longitude']
         myanmar_dict['fatalities']=item['fatalities']
-    data.append(myanmar_dict)
+        data.append(myanmar_dict)
 
     return jsonify(data)
    
