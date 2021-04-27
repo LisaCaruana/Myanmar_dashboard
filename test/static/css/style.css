@@ -5,7 +5,7 @@ body {
   /* .formlist, 
   width: 25% */
   .card {
-      width: 25%;
+      width: 100%;
       padding-right: 5px;
       padding-left: 10px; 
       border: 1px solid #0000;
