@@ -41,7 +41,9 @@ function createMap(Myanmar_map) {
         iconUrl: img_url, 
         iconSize:     [45, 45],
         iconAnchor:   [22, 94],
-        popupAnchor:  [-3, -76]
+        popupAnchor:  [-3, -76],
+        type: 
+        // setPopupContent: (<$"{incident['Description'])
       });
       return incident_icon
     }
@@ -53,7 +55,7 @@ function createMap(Myanmar_map) {
     data.forEach(incident=>{
       var coords=incident['Coordinates'].replace('(', '').replace(')', '').split(', ')
     
-      var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(`<img src="${incident['Image_Link']}" body="${incident['Description']}"/>`)//"Bago"</h1>`); //incident['columnheader']
+      var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(`<img src="${incident['Image_Link']}/>`)//"Bago"</h1>`); //incident['columnheader']
       markers_list.push(one_marker)
     })
       

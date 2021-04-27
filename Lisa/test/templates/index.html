@@ -6,21 +6,18 @@
     <title>Myanmar</title>
 
     <!-- Leaflet CSS -->
-    <link rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""
-      />
-    <link rel="icon"
-      href="https://cdn2.iconfinder.com/data/icons/world-flag-icons/256/Flag_of_Burma_Myanmar.png"
-      \>
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/world-flag-icons/256/Flag_of_Burma_Myanmar.png"/>
     <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+      var incident_csv = "{{ url_for('static', filename='data.csv') }}"
+      var photo_csv = "{{ url_for('static', filename='images.csv') }}"
+    </script>
   </head>
   <body>
     <div class="container-fluid maincontainer">
@@ -35,18 +32,22 @@
       <div class="row maincontent">
         <div class="col-sm-3 myscroll">
          <!-- twitter scroll--> 
-         <div id="twitter_bot">
-          <a class="twitter-timeline"
-            href="https://twitter.com/joaquinDS5/lists/what-happening-in-myanmar-79920?ref_src=twsrc%5Etfw">A
-            Twitter bot by Group 6</a> <script async
-            src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"></script>
-        </div>
+           <div id="twitter_bot">
+            <a class="twitter-timeline"
+              href="https://twitter.com/joaquinDS5/lists/what-happening-in-myanmar-79920?ref_src=twsrc%5Etfw">A
+              Twitter bot by Group 6</a> <script async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"></script>
+          </div>
         </div>
    
         <div class="col-sm-9 contentcolumn" >
-          <div class="row maprow"><div id="map"></div>
-         </div>
+          <div class="row maprow">
+            <div id="map"></div>
+          </div>
+          <div class='row'>
+            <div id='plot'></div>
+          </div>
           <div class="card" class="row formrow" >
             <!-- <ul class="formlist" id="input-form-list"> -->
               <h2 class="wsite-content-title" style="text-align:center;" class="card-body"><font
@@ -144,22 +145,20 @@
           </div>
           <!-- main content here-->
         </div>
-
-     
-
       </div>
 
     </div>
 
  
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
 <!-- API key -->
-<script type="text/javascript" src="../static/js/config.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
 <!-- JS -->
-<script type="text/javascript" src="../static/js/Myanmar.js"></script>
-<script type="text/javascript" src="../static/leaflet-heat.js"></script>
-<script type="text/javascript" src="../static/map.js"></script>
-<script type="text/javascript" src="../static/marker.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
+<!-- <script type="text/javascript" src="../static/map.js"></script> -->
+<!-- <script type="text/javascript" src="../static/marker.js"></script> -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/Myanmar.js') }}"></script>
 </body>
 
   
