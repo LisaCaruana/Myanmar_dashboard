@@ -1,5 +1,3 @@
-// import CircleMarker as LeafletCircleMarker
-
 function createMap(overlayMaps) {
   var map_base = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
 
@@ -14,17 +12,11 @@ function createMap(overlayMaps) {
     "map_base": map_base
   };
 
-  // var overlayMaps = {
-  //   "Myanmar_map": Myanmar_map,
-  //   // "Heatmap": leaflet-heat.js,
-  //   // "Markermap": marker
-  // }
-
   var map = L.map("map", {
     center: [21.9162, 95.9560],
  
     zoom: 6,
-    layers: [map_base]//, Object.values(overlayMaps)[1]]//, Heatmap, Markermap]//, Heatmap]
+    layers: [map_base]
   });
 
   L.control.layers(baseMap, overlayMaps, {
@@ -34,78 +26,22 @@ function createMap(overlayMaps) {
 };
 
 function createPhotoMarkers(data) {
- 
   var markers_list=[]
   function create_icon(img_url){
     var incident_icon=L.icon({
       iconUrl: img_url,
-      // content: 'img_url',
-      // width: "4px",
-      // height: "4px",
-      // margin: "3px 0 0 3px",
-      // // background: "#fff",
-      // position: "absolute",
-      // borderradius: "50%"
-      // iconUrl: img_url, 
       iconSize:     [45, 45],
-      // iconShape: [circle],
       iconAnchor:   [22, 94],
       popupAnchor:  [-3, -76]
-      // style: "circleMarker"
-      // border-radius: [50%]
-      
-      
-      // geometry: "circle"
-      // marker: "circle"
-      // type: "circle"
     });
-    // incident_icon {
-    //   width: 30px;
-    //   height: 30px;
-    //   border-radius: 50% 50% 50% 0;
-    //   background: #c30b82;
-    //   position: absolute;
-    //   transform: rotate(-45deg);
-    //   left: 50%;
-    //   top: 50%;
-    //   margin: -15px 0 0 -15px;
-    // }
-
-    return incident_icon//=L.CircleMarker
-  
-// function pop_Fotos(layer) {
-//     var popupContent = []
-//     var popupContent = ('<img style="max-height:200px;max-width:200px;" img_src="${incident[Image_Link]}</img>'
-//     layer.bindPopup(popupContent, {maxWidth: 200, closeOnClick: true});
-// };
-//   return popupContent
-// }
-//   function createpopUp(Description){
-//     var content = []
-//     function create_content(data){
-//       var content = L.bindPopup({
-//         text = incident[Description],
-//         img_src = img_url,
-//         width = "250px",
-//         height = "75px" 
-//   });
-//       return content
-// }
-  //   incident['img_url'],
-    // var Image_Link = img_url,
-      
-  // L.marker(incident_icon);
-  //   border-radius: 50%
+    return incident_icon
   }
   
   data.forEach(incident=>{
     console.log(create_icon(incident['Image_Link']))
     console.log(incident["Image_Link"])
     var coords=incident['Coordinates'].replace('(', '').replace(')', '').split(', ')
-    //var one_marker=L.Marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(`<img src=${incident['Image_Link']}, style="width: 5px, height: 5px" /> <p style="font-size: 12px"> ${incident['Description']}</p>`)//"Bago"</h1>`); //incident['columnheader']
-    var one_marker=L.circleMarker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon("https://pbs.twimg.com/media/EtwgugmVEAEa-yZ?format=jpg&name=medium")}).bindPopup(`<img src=${incident['Image_Link']} style="width: 5px, height: 5px"/> <p style="font-size: 12px"> ${incident['Description']}</p>`)//"Bago"</h1>`); //incident['columnheader']
-    //var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(popupContent)
-    //var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(popupContent)
+    var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(`<img src=${incident['Image_Link']}, style="width: 5px, height: 5px" /> <p style="font-size: 12px"> ${incident['Description']}</p>`)//"Bago"</h1>`); //incident['columnheader']
     markers_list.push(one_marker)
   
   })
@@ -117,8 +53,7 @@ function createIncidentMarkers(data){
   var markersArray=[]
   for (var i = 0; i < data.length; i++) {
     markersArray.push(L.marker([data[i].latitude, data[i].longitude]).bindPopup("<h1>Place: " + data[i].location + "</h1> <h2>Attack Type: " + data[i].event_type + "</h2>"));
-    // L.marker(heatArray[i])
-  // ;
+   
   }
   return L.layerGroup(markersArray);
 }
@@ -190,3 +125,66 @@ d3.csv(photo_csv).then(photo_data=>{
                'Heatlayer': createHeatLayer(incident_data)})
   })
 });
+
+ //var one_marker=L.circleMarker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon("https://pbs.twimg.com/media/EtwgugmVEAEa-yZ?format=jpg&name=medium")}).bindPopup(`<img src=${incident['Image_Link']} style="width: 5px, height: 5px"/> <p style="font-size: 12px"> ${incident['Description']}</p>`)//"Bago"</h1>`); //incident['columnheader']
+    //var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(popupContent)
+    //var one_marker=L.marker([parseFloat(coords[0]), parseFloat(coords[1])], {icon: create_icon(incident['Image_Link'])}).bindPopup(popupContent)
+    // function pop_Fotos(layer) {
+//     var popupContent = []
+//     var popupContent = ('<img style="max-height:200px;max-width:200px;" img_src="${incident[Image_Link]}</img>'
+//     layer.bindPopup(popupContent, {maxWidth: 200, closeOnClick: true});
+// };
+//   return popupContent
+// }
+//   function createpopUp(Description){
+//     var content = []
+//     function create_content(data){
+//       var content = L.bindPopup({
+//         text = incident[Description],
+//         img_src = img_url,
+//         width = "250px",
+//         height = "75px" 
+//   });
+//       return content
+// }
+  //   incident['img_url'],
+    // var Image_Link = img_url,
+      
+  // L.marker(incident_icon);
+  //   border-radius: 50%
+      // incident_icon {
+    //   width: 30px;
+    //   height: 30px;
+    //   border-radius: 50% 50% 50% 0;
+    //   background: #c30b82;
+    //   position: absolute;
+    //   transform: rotate(-45deg);
+    //   left: 50%;
+    //   top: 50%;
+    //   margin: -15px 0 0 -15px;
+    // }
+   // content: 'img_url',
+      // width: "4px",
+      // height: "4px",
+      // margin: "3px 0 0 3px",
+      // // background: "#fff",
+      // position: "absolute",
+      // borderradius: "50%"
+      // iconUrl: img_url, 
+        // style: "circleMarker"
+      // border-radius: [50%]
+      
+      
+      // geometry: "circle"
+      // marker: "circle"
+      // type: "circle"
+      // import CircleMarker as LeafletCircleMarker
+      
+  // var overlayMaps = {
+  //   "Myanmar_map": Myanmar_map,
+  //   // "Heatmap": leaflet-heat.js,
+  //   // "Markermap": marker
+  // }//, Object.values(overlayMaps)[1]]//, Heatmap, Markermap]//, Heatmap]
+    // iconShape: [circle],
+     // L.marker(heatArray[i])
+  // ;

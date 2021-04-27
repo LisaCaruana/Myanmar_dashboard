@@ -4,12 +4,12 @@ body {
   }
   /* .formlist, 
   width: 25% */
-  .card {
+  /* .card {
       width: 100%;
       padding-right: 5px;
       padding-left: 10px; 
       border: 1px solid #0000;
-  }
+  } */
   /* .twitter-bot, */
         /* border: 5px */
 
@@ -56,11 +56,16 @@ body {
 }
 .formrow {
   height:50%;
-  width: 300px;
+  width: 100%;
   /* background-color: purple; */
   /* border-style: solid; */
   
 }
+/* .form-control {
+  height: 100%;
+  width: 50%;
+  background-color: purple;
+} */
 .incident_icon{
   content: '';
   width: 24px;

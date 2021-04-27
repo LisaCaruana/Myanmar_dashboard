@@ -25,13 +25,8 @@
   </head>
   <body>
     <!-- <div class="container-fluid maincontainer"> -->
+
     <div class="container">
-        <!-- <div class="jumbotron">
-          <h1 class="display-4" style="align-content: center;">What is happening in Myanmar?</h1>
-          <p class="lead">A dashboard looking at the Spring Revolution</p>
-          <hr class="my-4">
-          </div>
-      </div> -->
     <div class="row myheader">
       <div class="jumbotron" style= "text-align: center;">
           <h1 class="display-4" style="align-content: center;">What is happening in Myanmar?</h1>
@@ -40,7 +35,7 @@
           <hr class="my-4">
       </div>
     </div>
-    </div>
+    <!-- </div> -->
     <div class="container-fluid maincontainer">
       <div class="row maincontent">
         <div class="col-sm-3 myscroll">
@@ -54,33 +49,31 @@
           </div>
         </div>
    
-        <div class="col-sm-9 contentcolumn" >
-          <div class="row maprow">
-            <div id="map"></div>
-          </div>
+    <div class="col-sm-9 contentcolumn" >
+        <div class="row maprow">
+        <div id="map"></div>
+    </div>
         <div class="col-sm-9 contentcolumn" style="align-content: center;" >
           <div class='row'>
             <div id='plot'></div>
           </div>
-          </div>
-        <div class="col-sm-5 formcolumn" style="align-content: center;" >
-        <div class="row formrow" >
-          <h2 class="wsite-content-title" style="text-align:center;"><font size="6" color="#00000">Human Rights Abuses Report Form</font></h2>
-          <hr>
-          <h3 class="wsite-content-title" style="text-align:center;"><font size="5" color="#00000">လူ့အခွင့်အရေးချိုးဖောက်မှုအစီရင်ခံစာပုံစံ</font></h3>
-          <label class="wsite-form-label wsite-form-fields-required-label"><span class="form-required">*</span> Indicates required field</label>
-          <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
-            <label class="wsite-form-label wsite-form-fields-required-label"><span class="form-required">*</span>လိုအပ်တဲ့လယ်ကွင်းဖော်ပြသည်</label>
-            <div><div class="wsite-form-field" style="margin:5px 5px 5px 5px;"></div>
-            <div id="instructions" class="wsite-form-instructions" style="display:none;"></div>
-            <div><div class="wsite-form-field wsite-name-field" style="margin:5px 0px 5px 0px;">
-            </div>
-                      <form>
+          <!-- </div> -->
+          <div class="container-fluid" class="row formrow" >
+            <!-- <ul class="formlist" id="input-form-list"> -->
+              <h2 class="wsite-content-title" style="text-align:center;" class="card-body"><font size="6" color="#00000">Human Rights Abuses Report Form THIS</font></h2>
+              <h3 class="wsite-content-title" style="text-align:left;"><font size="5" color="#00000">လူ့အခွင့်အရေးချိုးဖောက်မှုအစီရင်ခံစာပုံစံ</font></h3>
+              <label class="wsite-form-label wsite-form-fields-required-label"><span class="form-required">*</span> Indicates required field</label><div>
+                  <div class="wsite-form-field" style="margin:0px 0px 0px 0px;">
+                  <label class="wsite-form-label"><span class="form-required">*</span> လိုအပ်တဲ့လယ်ကွင်းဖော်ပြသည်</label><div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;"></div>
+                    <hr>
+                    <div id="instructions" class="wsite-form-instructions" style="display:none;"></div>
+                    <!-- </div></div>  -->
+                      <div><div class="wsite-form-field wsite-name-field" style="margin:5px 0px 5px 0px;">
+                      </div>
+                      <form>  
                         <div class="form-group">
-                        <label for="exampleFormControlSelect1">State/Region
-                            (ပြည်နယ် / တိုင်းဒေသကြီး)</label>
-                          <select class="form-control"
-                            id="exampleFormControlSelect1">
+                          <label for="exampleFormControlSelect1">State/Region (ပြည်နယ် / တိုင်းဒေသကြီး)</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
                             <option>Ayeyarwady (ဧရာဝတီတိုင်းဒေသကြီ)</option>
                             <option>Bago (ပဲခူးမြို့)</option>
                             <option>Chin (ချင်းပြည်နယ်)</option>
@@ -100,16 +93,11 @@
                           </select>
                         </div>
                         <hb>
-                          <div><div class="wsite-form-field" style="margin:5px 0px
-                              5px 0px;">
-                              <label class="wsite-form-label"
-                                for="input-587890827587314488">Description/ဖော်ပြချက်
+                          <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
+                              <label class="wsite-form-label" for="input-description">Description/ဖော်ပြချက်
                                 <span class="form-required">*</span></label>
                               <div class="wsite-form-input-container">
-                                <textarea aria-required="true"
-                                  id="input-587890827587314488"
-                                  class="wsite-form-input wsite-input
-                                  wsite-input-width-250px"
+                                <textarea aria-required="true" id="input-description" class="wsite-form-input wsite-input wsite-input-width-250px"
                                   name="_u587890827587314488" style="height:
                                   200px"></textarea>
                               </div>
@@ -147,25 +135,39 @@
                           </div>
                         <!-- </ul> -->
                       </form>
-          </div> <!--div end form row-->
-        </div>
+                      </div>
+                    </div>
+                </div>
+          </div>
           <!-- main content here-->
           <!-- <div classs = "row"></div> -->
           <!-- <div id="plot"></div> -->
-        <div class="col-sm-9 contentcolumn" >
-        <div class = "row"> 
-          <iframe width="1050px" height="1000px" src="https://app.photobucket.com/u/Written_Root?mode=slideshow"></iframe>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
         <script src="../static/js/app.js"></script>
-        </div>
-        </div>
-        
           
         </div>
       </div>
+      <div class="col-sm-9 contentcolumn" >
+          <div row= "photorow">
+              <iframe width="1920" height="1080" src="https://app.photobucket.com/u/Written_Root?mode=slideshow"></iframe>
+          </div>
+      </div>
+        
+       
+        <!-- <div class = "col-md-4">
+        <div class = "row">
+        <div class="card" width= "45%" display= "text-align-right">
+        <div class="card-body" div id="twitter_bot" >
+        <a class="twitter-timeline" href="https://twitter.com/joaquinDS5/lists/what-happening-in-myanmar-79920?ref_src=twsrc%5Etfw">A Twitter bot by Group 6</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 
     </div>
-
+    <!-- <div>
+    
+        </div>
+        </div>
+        </div>
+        </div>
+        </div> -->
  
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
@@ -177,7 +179,7 @@
 <script type="text/javascript" src="../static/marker.js"></script> 
 <script type="text/javascript" src="{{ url_for('static', filename='js/Myanmar.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
-<!-- <script src="../static/js/app.js"></script> -->
+
 
 </body>
 
@@ -185,3 +187,10 @@
 </div>
 
 </html>
+ <!-- <div class="jumbotron">
+          <h1 class="display-4" style="align-content: center;">What is happening in Myanmar?</h1>
+          <p class="lead">A dashboard looking at the Spring Revolution</p>
+          <hr class="my-4">
+          </div>
+      </div> -->
+      <!-- <script src="../static/js/app.js"></script> -->
