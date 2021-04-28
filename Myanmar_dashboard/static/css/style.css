@@ -31,8 +31,8 @@ body {
 }
 .myheader {
  /*width: 100%;*/
-  height: 10%;
-  background-color: red
+  /* height: 10%;
+  background-color: red */
 }
 .myscroll {
   width: 100%;
@@ -44,13 +44,13 @@ body {
 .contentcolumn {
   width: 100%;
   height: 650px;
-  background-color:yellow
+  background-color:white
 
 }
 .maprow {
   height: 100%;
   width: 100%;
-  background-color: pink;
+  /* background-color: pink; */
   border-style: solid;
   padding: 0px
 }
@@ -87,9 +87,10 @@ body {
   /* maxWidth: "auto"; */
 }
 
-.plot {
+/* #plot {
   width: 100%;
-}
+  height: 80%;
+} */
 
 /* .twitter-timeline */
 
