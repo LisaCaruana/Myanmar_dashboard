@@ -1,3 +1,3 @@
 # Myanmar_dashboard
 
-![Dashboard](Images/Dashboard_Visual)
+![Dashboard_Visual](Images/Dashboard_Visual)
